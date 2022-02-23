@@ -153,7 +153,7 @@ function mainFunc(){
         afterGameSection.style.display = 'none';
         actualGame.style.display = 'block'
         if(input.inputmode){
-            input.inputmode("text");
+            input.inputmode = "text";
         }
         input.focus();
         secondsLeft = seconds//depending on dificulty chosen

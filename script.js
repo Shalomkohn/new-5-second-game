@@ -152,7 +152,9 @@ function mainFunc(){
         preGameSection.style.display = 'none'
         afterGameSection.style.display = 'none';
         actualGame.style.display = 'block'
-        input.inputmode("text");
+        if(input.inputmode){
+            input.inputmode("text");
+        }
         input.focus();
         secondsLeft = seconds//depending on dificulty chosen
         word.innerHTML = wordArray[Math.floor(Math.random() * wordArray.length - 1)];

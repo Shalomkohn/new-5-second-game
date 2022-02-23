@@ -148,19 +148,22 @@ function mainFunc(){
     
 
     function startGame(){
+        //for testing => console.log(input.getAttribute("inputmode"))
         gameOn = true;
         preGameSection.style.display = 'none'
         afterGameSection.style.display = 'none';
         actualGame.style.display = 'block'
-        if(input.inputmode){
-            input.inputmode = "text";
-        }
         input.focus();
         secondsLeft = seconds//depending on dificulty chosen
         word.innerHTML = wordArray[Math.floor(Math.random() * wordArray.length - 1)];
         word.style.visibility = 'visible';
         score = 0;
         input.value = '';
+        //show and hide keyboard (for mobiles)
+        if(input.getAttribute("inputmode") == 'none'){
+            input.setAttribute("inputmode", "text");
+            //for testing => console.log(input)
+        }
     
         
         //check if game is over ------
@@ -180,6 +183,7 @@ function mainFunc(){
 
                 actualGame.style.display = 'none';
                 input.setAttribute("inputmode", "none")
+
                 afterGameSection.style.display = 'grid';
             }
             

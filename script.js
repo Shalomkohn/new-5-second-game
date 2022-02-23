@@ -152,6 +152,7 @@ function mainFunc(){
         preGameSection.style.display = 'none'
         afterGameSection.style.display = 'none';
         actualGame.style.display = 'block'
+        input.setAttribute("inputmode", "text")
         input.focus();
         secondsLeft = seconds//depending on dificulty chosen
         word.innerHTML = wordArray[Math.floor(Math.random() * wordArray.length - 1)];
@@ -176,6 +177,7 @@ function mainFunc(){
                 highScore.innerHTML = localStorage.getItem('High Score')
 
                 actualGame.style.display = 'none';
+                input.setAttribute("inputmode", "none")
                 afterGameSection.style.display = 'grid';
             }
             

@@ -1,0 +1,308 @@
+
+
+body{
+    text-align: center;
+    background: linear-gradient(120deg, #487,#fbc531);
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    overflow-y: hidden;
+    margin: 0;
+}
+img.logo{
+    position: absolute;
+    width: 100%;
+    bottom: 40%;
+}
+div.preGameAndAfterGameSection{
+    background-color: rgba(200, 200, 200, 70%);
+    width: 39vw;
+    height: 39vw;
+    border-radius: 9px;
+    display: grid;
+    padding: 25% 10% 10%;  
+    font-size: 1vw;
+    position: fixed;
+    left: 20vw;
+    top: 50vh;
+    transform: translate(0, -50%);
+}
+div#preGameSection{
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+    row-gap: 10%;
+    position: relative;
+}
+div#selectDificultySection{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0;
+    column-gap: 4%;
+}
+
+p#selectDificultyPhrase{
+    margin: 0;
+    grid-column-start: 1;
+    grid-column-end: 4;
+    box-sizing: border-box;
+    font-size: 2em;
+}
+div#selectDificultySection button{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2em;
+    z-index: 1;
+}
+div#selectDificultySection button:hover{
+    border-width: 2px;
+    background-color: rgb(210, 210, 210);
+}
+.gameButton{
+    border-radius: 5px;
+    border: 1px solid #333;
+    background-color: rgb(200, 200, 200);
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 1em;
+}
+button.startButton:hover{
+    border-width: 3px;
+    background-color: rgb(210, 210, 210);
+}
+button.startButton1{
+    grid-row-start: 2;
+    grid-row-end: 3;
+    border-radius: 70px;
+    position: relative;
+}
+button.startButton1 p{
+    display: inline-block;
+    font-family: 'Merriweather', serif;
+    font-size: 3em;
+    font-weight: 800;
+    margin: 0;
+    position: absolute;
+    right: 12%;
+    transform: translateY( -50% );
+
+}
+img#playButtonIcon{
+    height: 3em;
+    display: inline-block;
+    position: absolute;
+    left: 12%;
+    top: 50%;
+    transform: translateY( -50% );
+}
+div#highScore{
+    grid-row-start: 3;
+    grid-row-end: 4;
+    position: relative;
+    color: #333;
+}
+div#highScore p{
+    display: inline;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    font-size: 3em;
+    position: absolute;
+    left: 5%;
+    top: 30%;
+    
+}
+div#highScore span{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 3em;
+    position: absolute;
+    right: 8%;
+    top: 30%;
+
+}
+
+
+/* ---------------------- ACTUAL GAME -------------------------*/
+
+div#actualGame{
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    font-size: 1vw;
+}
+div#score{
+    background-color: rgba(211, 211, 211,20%);
+    position: absolute;
+    left: 0;
+    padding: 3% 3% 0 3%;
+    border-radius: 0 0 5px 0px;
+    font-size: 1em;
+}
+p#scorePhrase{
+    font-size: 3em;
+    margin: 0;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 1px;
+    color: #333;
+}
+div#score span#pointsScored{
+    color: rgba(128, 78, 109, 0.87);
+    font-size: 20em;
+}
+div#wordAndTimeDiv{
+    margin: 35% 0 80px 0;
+    font-size: 1em;
+}
+div#timeLeftDiv{
+    font-size: 1em;
+    color: #333;
+    display: inline-block;
+    position: relative;
+    bottom: 0px;
+    left: 4%;
+}
+#timeLeftDiv i{
+    font-size: 9em;
+}
+div#word{
+    font-family:monospace;
+    font-size: 10em;
+    padding: 0 20px;
+    border-bottom: 3px solid black;
+    border-radius: 5px;
+    display: inline-block;
+    box-sizing: border-box;
+    background-color: rgba(255,255,255,70%);
+}
+span#timeLeft{
+    position: relative;
+    top: 6px;
+    font-size: 15em;
+    font-family: 'Varela Round', sans-serif;
+   
+}
+
+input#input{
+    width: 100%;
+    font-size: 70px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    outline: 0;
+    border: 0;
+    border-bottom: 2px solid #333 ;
+    background-color: rgba(211, 211, 211,20%);
+    display: block;
+}
+@media screen and (max-width: 450px){
+    div.preGameAndAfterGameSection{
+        width: 75vw;
+        height: 75vw; 
+        font-size: 1.5vw;
+        left: 2.5vw;
+    }
+    #afterGameSection{
+        padding-top: 40%;
+    }
+    img.logoAfterGame{
+       bottom: 45%;
+    }
+}
+@media screen and (min-width: 800px){
+    div#actualGame{
+        font-size: 0.5vw; 
+    }
+    div.preGameAndAfterGameSection{
+        width: 25vw;
+        height: 25vw; 
+        font-size: .7vw;
+        left: 27.5vw;
+    }
+}
+@media screen and (min-width: 1100px){
+    div.preGameAndAfterGameSection{
+        width: 15vw;
+        height: 15vw; 
+        font-size: .4vw;
+        left: 32.5vw;
+    }
+}
+
+
+
+
+
+/* --------------- AFTER GAME SECTION --------------*/
+
+
+#afterGameSection {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10%;
+    column-gap: 5%;
+}
+
+div#yourScore{
+    font-family: 'Varela Round', sans-serif;;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    position: relative;
+    color: #333;
+}
+p#yourScorePhrase{
+    font-size: 3em;
+    display: inline;
+    position: absolute;
+    top: 50%;
+    transform: translate(-0%, -50%);
+    left: 20%;
+    margin: 0;
+
+}
+div#yourScore span{
+    font-size: 8em;
+    position: absolute;
+    top: 50%;
+    transform: translate(-0%, -50%);
+    left: 60%;
+}
+
+p#gameOver{
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 5px;
+    font-size: 6.1em;
+    color: rgb(99, 129, 228);
+    text-shadow: 0px 0px 3px #000;
+    margin: 0;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+button.homeButton{
+    font-size: 1em;
+}
+button.homeButton p{
+    font-size: 2.5em;
+}
+button.homeButton i{
+    font-size: 2.5em;
+}
+
+
+p#backToHome{
+    display: inline;
+}
+button.startButton2{
+    font-size: 2.5em;
+}
+button.startButton2 p{
+    margin: 0;
+    font-weight: 600;
+}
+button.homeButton:hover{
+    border-width: 2px;
+}
+
+
+
+

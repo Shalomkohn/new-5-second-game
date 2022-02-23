@@ -182,7 +182,7 @@ function mainFunc(){
             
             //check for currect word
             
-            if(input.value == word.innerHTML && gameOn){
+            if(input.value.toLowerCase() == word.innerHTML && gameOn){
                 secondsLeft = seconds;
                 word.innerHTML = wordArray[Math.floor(Math.random() * wordArray.length - 1)];
                 input.value = '';

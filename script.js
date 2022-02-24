@@ -2,19 +2,19 @@ document.addEventListener('load', mainFunc());
 
 function mainFunc(){
 
-    var timeLeft = document.querySelector('#timeLeft');
-    var word = document.querySelector('#word');
-    var input = document.querySelector('#input');
-    var scoreCounter = document.querySelector('#pointsScored');
-    var startButton = document.querySelectorAll('.startButton');
-    var highScore = document.querySelector('#highScore span');
+    var preGameSection = document.querySelector('.preGameSection');
     var dificultyButton = document.querySelectorAll('.dificultyButton');
-    var preGameSection = document.querySelector('#preGameSection');
-    var actualGame = document.querySelector('#actualGame');
-    var afterGameSection = document.querySelector('#afterGameSection');
-    var pointsScored = document.querySelector('#pointsScored')
-    var homeButton = document.querySelector('.homeButton');
-    var yourScore  = document.querySelector('#yourScore span');
+    var startButton = document.querySelectorAll('.startButton');
+    var highScore = document.querySelector('.highScore span');
+    var actualGame = document.querySelector('.actualGameSection');
+    var pointsScored = document.querySelector('.pointsScored');
+    var word = document.querySelector('.word');
+    var timeLeft = document.querySelector('.timeLeft');
+    var input = document.querySelector('.input');
+    var afterGameSection = document.querySelector('.afterGameSection');
+    var yourScore  = document.querySelector('.yourScore span');
+    var backButton = document.querySelector('.backButton');
+
     var score = 0;
     var gameOn = false;
     var seconds = 4// default to normal
@@ -92,21 +92,17 @@ function mainFunc(){
         'victoria',
     ];
 
+    //only show preGameSection
     actualGame.style.display = 'none';
     afterGameSection.style.display = 'none';
-    
-    //for testing => 
-    //preGameSection.style.display = 'none';
 
-    //show score and high score ---
-    scoreCounter.innerHTML = score;
+    //show high score 
     highScore.innerHTML = localStorage.getItem('High Score');
     
-
+    //change dificulty 
     dificultyButton.forEach(e => {
         e.addEventListener('click',changeDificultySelection)
     });
-    
     function changeDificultySelection(){
         dificultyButton.forEach(f => {
             f.style.borderWidth = '1px';
@@ -121,23 +117,18 @@ function mainFunc(){
         }
     }
 
-    //Starting Game ------
+    //Start Game either with button or press enter.
     startButton.forEach(e => {
-        e.addEventListener('click', makeSureGameNotOn)
+        e.addEventListener('click', startGame)
     })
     document.addEventListener('keydown', (e) => {
         if(e.key === 'Enter'){
-            makeSureGameNotOn();
+            if (!gameOn){
+                startGame();
+            }
         }
     })
-
-    function makeSureGameNotOn(){
-        if (!gameOn){
-            startGame();
-        }
-    }
     
-
     // countdown ----
     setInterval(() => {
         if(secondsLeft > 0 && gameOn){
@@ -148,69 +139,62 @@ function mainFunc(){
     
 
     function startGame(){
-        //for testing => console.log(input.getAttribute("inputmode"))
         gameOn = true;
+        score = 0;
+        secondsLeft = seconds//depending on dificulty chosen
+        word.innerHTML = wordArray[Math.floor(Math.random() * wordArray.length - 1)];
+        input.value = '';
+        pointsScored.innerHTML = score;
+        //swich to actualGameSection
         preGameSection.style.display = 'none'
         afterGameSection.style.display = 'none';
         actualGame.style.display = 'block'
         input.focus();
-        secondsLeft = seconds//depending on dificulty chosen
-        word.innerHTML = wordArray[Math.floor(Math.random() * wordArray.length - 1)];
-        word.style.visibility = 'visible';
-        score = 0;
-        input.value = '';
-        //show and hide keyboard (for mobiles)
+        //show keyboard (for mobiles)
         if(input.getAttribute("inputmode") == 'none'){
             input.setAttribute("inputmode", "text");
-            //for testing => console.log(input)
         }
-    
         
-        //check if game is over ------
+        //check if game is over or if points are scored.
         setInterval(checkGame, 50);
+
         function checkGame(){
-            
+
             //check for game over
             if(secondsLeft == 0){
                 gameOn = false;
-
-                pointsScored.innerHTML = score;
-                //check high score ----
+                yourScore.innerHTML = score;
+                //check for new high score
                 if(score > localStorage.getItem('High Score')){
-                    localStorage.setItem('High Score', score)
+                    localStorage.setItem('High Score', score);
                 }
-                highScore.innerHTML = localStorage.getItem('High Score')
-
+                highScore.innerHTML = localStorage.getItem('High Score');
+                //swich section to afterGameSection
                 actualGame.style.display = 'none';
-                input.setAttribute("inputmode", "none")
-
+                input.setAttribute("inputmode", "none");
                 afterGameSection.style.display = 'grid';
             }
             
-            
             //check for currect word
-            
             if(input.value.toLowerCase() == word.innerHTML && gameOn){
                 secondsLeft = seconds;
                 word.innerHTML = wordArray[Math.floor(Math.random() * wordArray.length - 1)];
                 input.value = '';
                 score++;
+                pointsScored.innerHTML = score;
             }
-            scoreCounter.innerHTML = score;
-            yourScore.innerHTML = score;
 
-
-            //After game section
-            homeButton.addEventListener('click', backToHome)
-            function backToHome(){
-                afterGameSection.style.display = 'none';
-                preGameSection.style.display = 'grid';
-                secondsLeft = seconds;
-            }
-            
-        }
-
+        }// interval 50
+        
+        
     }//Start Game Function
-    
+
+    //After game section
+    backButton.addEventListener('click', backToHome)
+    function backToHome(){
+        afterGameSection.style.display = 'none';
+        preGameSection.style.display = 'grid';
+        secondsLeft = seconds;
+    }
 
 }

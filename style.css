@@ -24,33 +24,27 @@ div.preGameAndAfterGameSection{
     top: 50vh;
     transform: translate(0, -50%);
 }
-div#preGameSection{
-    grid-template-rows: 1fr 1fr 1fr;
+div.preGameSection{
+    grid-template-rows:20% 30% 20%;
     grid-template-columns: 1fr;
-    row-gap: 10%;
+    row-gap: 15%;
     position: relative;
 }
-div#selectDificultySection{
+div.selectDificultySection{
     display: grid;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-row-start: 0%;
+    grid-row-end: 20%;
     margin: 0;
     column-gap: 4%;
 }
-
-p#selectDificultyPhrase{
-    margin: 0;
-    grid-column-start: 1;
-    grid-column-end: 4;
-    box-sizing: border-box;
-    font-size: 2em;
-}
-div#selectDificultySection button{
+div.selectDificultySection button{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 2em;
+    font-size: 2.7em;
     z-index: 1;
 }
-div#selectDificultySection button:hover{
+div.selectDificultySection button:hover{
     border-width: 2px;
     background-color: rgb(210, 210, 210);
 }
@@ -69,23 +63,22 @@ button.startButton:hover{
     background-color: rgb(210, 210, 210);
 }
 button.startButton1{
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-row-start: 20%;
+    grid-row-end: 80%;
     border-radius: 70px;
     position: relative;
 }
 button.startButton1 p{
     display: inline-block;
     font-family: 'Merriweather', serif;
-    font-size: 3em;
+    font-size: 3.5em;
     font-weight: 800;
     margin: 0;
     position: absolute;
     right: 12%;
     transform: translateY( -50% );
-
 }
-img#playButtonIcon{
+img.playButtonIcon{
     height: 3em;
     display: inline-block;
     position: absolute;
@@ -93,64 +86,65 @@ img#playButtonIcon{
     top: 50%;
     transform: translateY( -50% );
 }
-div#highScore{
-    grid-row-start: 3;
-    grid-row-end: 4;
+div.highScore{
+    grid-row-start: 60%;
+    grid-row-end: 100%;
     position: relative;
     color: #333;
 }
-div#highScore p{
+div.highScore p{
     display: inline;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
     font-size: 3em;
     position: absolute;
     left: 5%;
-    top: 30%;
+    top: 24%;
     
 }
-div#highScore span{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+div.highScore span{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 3em;
     position: absolute;
     right: 8%;
-    top: 30%;
+    top: 24%;
 
 }
 
 
 /* ---------------------- ACTUAL GAME -------------------------*/
 
-div#actualGame{
+div.actualGameSection{
     max-width: 800px;
     margin: auto;
     position: relative;
     font-size: 1vw;
 }
-div#score{
+div.scoreDiv{
     background-color: rgba(211, 211, 211,20%);
-    position: absolute;
+    position: fixed;
     left: 0;
-    padding: 3% 3% 0 3%;
+    top: 0;
+    padding: 5% 3% 0 3%;
     border-radius: 0 0 5px 0px;
     font-size: 1em;
 }
-p#scorePhrase{
+p.scorePhrase{
     font-size: 3em;
     margin: 0;
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 1px;
     color: #333;
 }
-div#score span#pointsScored{
+div.scoreDiv span.pointsScored{
     color: rgba(128, 78, 109, 0.87);
     font-size: 20em;
 }
-div#wordAndTimeDiv{
+div.wordAndTimeDiv{
     margin: 35% 0 0 0;
     font-size: 1em;
 }
-div#timeLeftDiv{
+div.timeLeftDiv{
     font-size: 1em;
     color: #333;
     display: inline-block;
@@ -158,10 +152,10 @@ div#timeLeftDiv{
     bottom: 0px;
     left: 4%;
 }
-#timeLeftDiv i{
+.timeLeftDiv i{
     font-size: 9em;
 }
-div#word{
+div.word{
     font-family:monospace;
     font-size: 10em;
     padding: 0 20px;
@@ -170,17 +164,15 @@ div#word{
     display: inline-block;
     box-sizing: border-box;
     background-color: rgba(255,255,255,70%);
-    transition: 10s;
 }
-span#timeLeft{
+span.timeLeft{
     position: relative;
     top: 6px;
     font-size: 15em;
     font-family: 'Varela Round', sans-serif;
-   
 }
 
-input#input{
+input.input{
     margin-top: 80px;
     width: 100%;
     font-size: 70px;
@@ -198,20 +190,31 @@ input#input{
         height: 75vw; 
         font-size: 1.5vw;
         left: 2.5vw;
+        padding: 40% 10% 10%; 
     }
-    #afterGameSection{
+    div.actualGameSection{
+        font-size: .8vw;
+    }
+    div.scoreDiv{
+        top: 32em;
+    }
+    div.wordAndTimeDiv{
+        position: relative;
+        left: 10%;
+    }
+    .afterGameSection{
         padding-top: 40%;
     }
-    img.logoAfterGame{
+    img.logo{
        bottom: 45%;
     }
-    input#input{
+    input.input{
         margin-top: 10px;
         font-size: 7em;
     }
 }
 @media screen and (min-width: 800px){
-    div#actualGame{
+    div.actualGameSection{
         font-size: 0.5vw; 
     }
     div.preGameAndAfterGameSection{
@@ -237,14 +240,14 @@ input#input{
 /* --------------- AFTER GAME SECTION --------------*/
 
 
-#afterGameSection {
+.afterGameSection {
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: 1fr 1fr;
     row-gap: 10%;
     column-gap: 5%;
 }
 
-div#yourScore{
+div.yourScore{
     font-family: 'Varela Round', sans-serif;;
     grid-column-start: 1;
     grid-column-end: 3;
@@ -253,7 +256,7 @@ div#yourScore{
     position: relative;
     color: #333;
 }
-p#yourScorePhrase{
+div.yourScore p{
     font-size: 3em;
     display: inline;
     position: absolute;
@@ -263,7 +266,7 @@ p#yourScorePhrase{
     margin: 0;
 
 }
-div#yourScore span{
+div.yourScore span{
     font-size: 8em;
     position: absolute;
     top: 50%;
@@ -271,31 +274,27 @@ div#yourScore span{
     left: 60%;
 }
 
-p#gameOver{
+p.gameOverPhrase{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     letter-spacing: 5px;
     font-size: 6.1em;
-    color: rgb(99, 129, 228);
-    text-shadow: 0px 0px 3px #000;
+    color: rgb(91, 124, 231);
+    text-shadow: 0px 0px 3px #fff;
     margin: 0;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row-start: 3;
     grid-row-end: 4;
 }
-button.homeButton{
+button.backButton{
     font-size: 1em;
 }
-button.homeButton p{
+button.backButton p{
     font-size: 2.5em;
-}
-button.homeButton i{
-    font-size: 2.5em;
-}
-
-
-p#backToHome{
     display: inline;
+}
+button.backButton i{
+    font-size: 2.5em;
 }
 button.startButton2{
     font-size: 2.5em;
@@ -304,7 +303,7 @@ button.startButton2 p{
     margin: 0;
     font-weight: 600;
 }
-button.homeButton:hover{
+button.backButton:hover{
     border-width: 2px;
 }
 

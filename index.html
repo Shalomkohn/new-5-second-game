@@ -9,64 +9,61 @@
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Merriweather:wght@300&family=Varela+Round&display=swap" rel="stylesheet">
-    <!--Attribute to auther of icon-->
+    <!--Attribute to auther of img-type icon-->
     <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
     <title>Word Beater</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="preGameSection" class="preGameAndAfterGameSection">
-        
-        <img src="Word Beater-logos_black.png" alt="" class="logo">
-
-        <div id="selectDificultySection">
-            <p id="selectDificultyPhrase"></p>
-            <button class="gameButton dificultyButton" id="easy">EASY</button>
-            <button class="gameButton dificultyButton" id="normal">NORMAL</button>
-            <button class="gameButton dificultyButton" id="hard">HARD</button>
+    <!------------     Pre Game Section     ------------>
+    <div class="preGameSection preGameAndAfterGameSection"> 
+        <img src="Word Beater-logos_black.png" class="logo">
+        <div class="selectDificultySection">
+            <button class="gameButton dificultyButton easy">EASY</button>
+            <button class="gameButton dificultyButton normal">NORMAL</button>
+            <button class="gameButton dificultyButton hard">HARD</button>
         </div>
         <button class="gameButton startButton startButton1" >
-            <img id="playButtonIcon" src="/001-play-button-arrowhead.png" alt="">
-            <p id="playGamePhrase">PLAY GAME</p>
+            <img class="playButtonIcon" src="/001-play-button-arrowhead.png" alt="">
+            <p>PLAY GAME</p>
         </button>
-        <div class="gameButton" id="highScore">
+        <div class="gameButton highScore">
             <p>HIGHEST SCORE: </p>
             <span>0</span>
         </div>
     </div>
-    <div id="actualGame">
-        
-        <div id="score">
-            <p id="scorePhrase">SCORE</p>
-            <span id="pointsScored"></span>
+
+        <!------------     Actual Game Section     ------------>
+    <div class="actualGameSection">
+        <div class="scoreDiv">
+            <p class="scorePhrase">SCORE</p>
+            <span class="pointsScored"></span>
         </div>
-        <br>
-        <div id="wordAndTimeDiv">
-            <div id="word">hhhheeelol</div>
-            <div id="timeLeftDiv">
+        <div class="wordAndTimeDiv">
+            <div class="word"></div>
+            <div class="timeLeftDiv">
                 <i class="fa-solid fa-stopwatch"></i>
-                <span id="timeLeft" >0</span>
+                <span class="timeLeft">0</span>
             </div>
         </div>
-        <br>
-        <input id="input" type="text">
-       
+        <input class="input" type="text">
     </div>
-    <div id="afterGameSection" class="preGameAndAfterGameSection">
-        <img src="Word Beater-logos_black.png" alt="" class="logo logoAfterGame">
-        <p id="gameOver">GAME OVER</p>
-        <div class="gameButton"  id="yourScore">
-            <p id="yourScorePhrase">SCORE: </p>
+
+        <!------------     After Game Section     ------------>
+    <div class="preGameAndAfterGameSection afterGameSection">
+        <img src="Word Beater-logos_black.png" alt="Word Beater" class="logo logoAfterGame">
+        <div class="gameButton yourScore">
+            <p>SCORE: </p>
             <span>0</span>
         </div>
-        <button class="gameButton homeButton">
+        <p class="gameOverPhrase">GAME OVER</p>
+        <button class="gameButton backButton">
             <i class="fa-solid fa-arrow-left"></i>
-            <p id="backToHome">BACK</p>
+            <p>BACK</p>
         </button>
         <button class="gameButton startButton startButton2">
-                <p id="playGamePhrase">PLAY AGAIN</p>
-            <div id="playShapeCss"></div>
+            <p>PLAY AGAIN</p>
         </button>
     </div>
 

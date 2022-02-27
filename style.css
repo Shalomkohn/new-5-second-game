@@ -3,7 +3,7 @@ body{
     background: linear-gradient(120deg, #487,#fbc531);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     min-height: 100vh;
-    overflow-y: hidden;
+    overflow: hidden;
     margin: 0;
 }
 img.logo{
@@ -118,16 +118,14 @@ div.actualGameSection{
     max-width: 800px;
     margin: auto;
     position: relative;
-    font-size: 1vw;
+    font-size: .8vw;
 }
 div.scoreDiv{
     background-color: rgba(211, 211, 211,20%);
-    position: fixed;
-    left: 0;
-    top: 0;
     padding: 5% 3% 0 3%;
-    border-radius: 0 0 5px 0px;
-    font-size: 1em;
+    border-radius: 5px 5px 2px 2px;
+    font-size: .7em;
+    display: inline-block;
 }
 p.scorePhrase{
     font-size: 3em;
@@ -144,34 +142,51 @@ div.wordAndTimeDiv{
     margin: 35% 0 0 0;
     font-size: 1em;
 }
-div.timeLeftDiv{
-    font-size: 1em;
-    color: #333;
-    display: inline-block;
-    position: relative;
-    bottom: 0px;
-    left: 4%;
-}
-.timeLeftDiv i{
-    font-size: 9em;
-}
 div.word{
-    font-family:monospace;
-    font-size: 10em;
+    font-family: monospace;
+    font-size: 8em;
     padding: 0 20px;
     border-bottom: 3px solid black;
     border-radius: 5px;
     display: inline-block;
     box-sizing: border-box;
     background-color: rgba(255,255,255,70%);
+    margin-left: .4em;
 }
-span.timeLeft{
+.timeBarBox{
+    height: 20em;
+    display: inline-flex;
+    flex-direction: column-reverse;
+    border: 1px solid black;
+    padding: 3px;
     position: relative;
-    top: 6px;
-    font-size: 15em;
-    font-family: 'Varela Round', sans-serif;
+    top: 2em;
+    margin-left: 3em;
+    border-radius: 4px;
 }
-
+.timeBars{
+    width: 7em;
+    height: 2em;
+    background-color: rgba(7, 255, 7,30%);
+    border: 1px solid black;
+    box-sizing: border-box;
+    border-radius: 2px;
+}
+.bar2{
+    background-color: rgba(251, 197, 49, 50%);
+}
+.bar1{
+    background-color: rgba(255, 165, 0, 80%);
+}
+.lastBar{
+    background-color: rgb(255, 0, 0, 70%);
+}
+.fa-stopwatch{
+    margin-left: 2px;
+    position: relative;
+    top: .3em;
+    font-size: 8em;
+}
 input.input{
     margin-top: 80px;
     width: 100%;
@@ -191,17 +206,12 @@ input.input{
         font-size: 1.5vw;
         left: 2.5vw;
         padding: 40% 10% 10%; 
-    }
-    div.actualGameSection{
-        font-size: .8vw;
+        top: 40vh;
     }
     div.scoreDiv{
         top: 32em;
     }
-    div.wordAndTimeDiv{
-        position: relative;
-        left: 10%;
-    }
+    
     .afterGameSection{
         padding-top: 40%;
     }
@@ -214,14 +224,20 @@ input.input{
     }
 }
 @media screen and (min-width: 800px){
-    div.actualGameSection{
-        font-size: 0.5vw; 
-    }
     div.preGameAndAfterGameSection{
         width: 25vw;
         height: 25vw; 
         font-size: .7vw;
         left: 27.5vw;
+    }
+    div.scoreDiv{
+        position: fixed;
+        top: 0;
+        left: 0;
+        border-radius: 0 0 5px 0;
+    }
+    .actualGameSection{
+        font-size: 1vw;
     }
 }
 @media screen and (min-width: 1100px){
@@ -231,8 +247,15 @@ input.input{
         font-size: .4vw;
         left: 32.5vw;
     }
+    div.actualGameSection{
+        font-size: .5vw;
+    }
 }
-
+@media screen and (min-width: 2000px){
+    div.actualGameSection{
+        font-size: .2vw;
+    }
+}
 
 
 

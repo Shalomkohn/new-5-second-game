@@ -20,9 +20,9 @@
     <div class="preGameSection preGameAndAfterGameSection"> 
         <img src="Word Beater-logos_black.png" class="logo">
         <div class="selectDificultySection">
-            <button class="gameButton dificultyButton easy">EASY</button>
-            <button class="gameButton dificultyButton normal">NORMAL</button>
-            <button class="gameButton dificultyButton hard">HARD</button>
+            <button class="gameButton dificultyButton" id="easyButton">EASY</button>
+            <button class="gameButton dificultyButton" id="normalButton">NORMAL</button>
+            <button class="gameButton dificultyButton" id="hardButton">HARD</button>
         </div>
         <button class="gameButton startButton startButton1" >
             <img class="playButtonIcon" src="/001-play-button-arrowhead.png" alt="">
@@ -36,18 +36,30 @@
 
         <!------------     Actual Game Section     ------------>
     <div class="actualGameSection">
-        <div class="scoreDiv">
-            <p class="scorePhrase">SCORE</p>
-            <span class="pointsScored"></span>
-        </div>
+       <!-- <span class="timeLeft">0</span>-->
+        
         <div class="wordAndTimeDiv">
-            <div class="word"></div>
-            <div class="timeLeftDiv">
-                <i class="fa-solid fa-stopwatch"></i>
-                <span class="timeLeft">0</span>
+            <div class="scoreDiv">
+                <p class="scorePhrase">SCORE</p>
+                <span class="pointsScored"></span>
             </div>
+            <div class="word">hhhhllooote</div>
+            <div class="timeBarBox">
+                <div class="timeBars lastBar"></div>
+                <div class="timeBarArray timeBars bar1"></div>
+                <div class="timeBarArray timeBars bar2"></div>
+                <div class="timeBarArray timeBars bar3"></div>
+                <div class="timeBarArray timeBars bar4"></div>
+                <div class="timeBarArray timeBars bar5"></div>
+                <div class="timeBarArray timeBars bar6"></div>
+                <div class="timeBarArray timeBars bar7"></div>
+                <div class="timeBarArray timeBars bar8"></div>
+                <div class="timeBarArray timeBars bar9"></div>
+            </div>
+            <i class="fa-solid fa-stopwatch"></i>
         </div>
         <input class="input" type="text">
+        
     </div>
 
         <!------------     After Game Section     ------------>

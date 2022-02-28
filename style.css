@@ -12,7 +12,7 @@ img.logo{
     bottom: 40%;
 }
 div.preGameAndAfterGameSection{
-    background-color: rgba(200, 200, 200, 70%);
+    background-color: rgba(200, 200, 200, 100%);
     width: 39vw;
     height: 39vw;
     border-radius: 9px;
@@ -268,6 +268,8 @@ input.input{
     grid-template-columns: 1fr 1fr;
     row-gap: 10%;
     column-gap: 5%;
+    transition-property: opacity;
+    transition-duration: .5s;
 }
 
 div.yourScore{

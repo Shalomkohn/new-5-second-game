@@ -310,7 +310,8 @@ function mainFunc(){
         pointsScored.innerHTML = score;
         //swich to actualGameSection
         preGameSection.style.display = 'none'
-        afterGameSection.style.display = 'none';
+        afterGameSection.style.opacity = '0%';
+        afterGameSection.style.display = 'grid';
         actualGame.style.display = 'block'
         input.focus();
         //show keyboard (for mobiles)
@@ -335,7 +336,7 @@ function mainFunc(){
                 //swich section to afterGameSection
                 actualGame.style.display = 'none';
                 input.setAttribute("inputmode", "none");
-                afterGameSection.style.display = 'grid';
+                afterGameSection.style.opacity = '100%';
                 timeBarArray.forEach(e => e.style.display = "block")
             }
             
